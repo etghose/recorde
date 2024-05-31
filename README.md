@@ -9,18 +9,18 @@ This repository contains code used to implement ReCorDe as shown in John et. al 
 
 ## File Descriptions
 ### Input
-- **CleanMonotherapyDrugResponse.RDS** --- a list of data frames. Each list element is a data frame containing clean drug response data from a different publicly available drug response data set. Data frames are given as drug x cell line with cell values corresponding to the AUC.
-- **NameStandardization.RDS** --- a list of data frames. Each list element is a data frame containing necessary drug name standardization information.
-- **ATC_map.RDS** -- a data frame. Maps standardized drug names to ATC code drug classes.
-- **ATC_dictionary.RDS** -- a data frame. Gives the definitions of each ATC code drug class; also contains information about whether the ATC code is canonical or not.
+- **CleanMonotherapyDrugResponse.RDS** - a list of data frames. Each list element is a data frame containing clean drug response data from a different publicly available drug response data set. Data frames are given as drug x cell line with cell values corresponding to the AUC.
+- **NameStandardization.RDS** - a list of data frames. Each list element is a data frame containing necessary drug name standardization information.
+- **ATC_map.RDS** - a data frame. Maps standardized drug names to ATC code drug classes.
+- **ATC_dictionary.RDS** - a data frame. Gives the definitions of each ATC code drug class; also contains information about whether the ATC code is canonical or not.
 
 ### Scripts
-- **configReCorDE.R** --- configuration script. Always sourced by Correlations.R and Enrichment.R. Installs dependencies and initializes ReCorDE parameters. Basic ReCorDE parameters can easily be changed using this script (e.g. correlation coefficient cutoff, classes to exclude post-FDR, etc.). Please see configReCorDE.R comments for further details. Parameters are set as presented in John et al. 2024 by default. 
-- **Correlations.R** -- correlation script. Runs the correlation step of ReCorDE. Takes CleanMonotherapyDrugResponse.RDS and NameStandardization.RDS as input. Outputs the unmerged, unpruned correlations results (UnprunedCorrelation.RDS) and the pruned correlation table (DCSCAD.RDS).
-- **Enrichment.R** -- enrichment script. Runs the enrichment step of ReCorDE. Takes DCSCAD.RDS, ATC_map.RDS, and ATC_dictionary.RDS as input. 
+- **configReCorDE.R** - configuration script. Always sourced by Correlations.R and Enrichment.R. Installs dependencies and initializes ReCorDE parameters. Basic ReCorDE parameters can easily be changed using this script (e.g. correlation coefficient cutoff, classes to exclude post-FDR, etc.). Please see configReCorDE.R comments for further details. Parameters are set as presented in John et al. 2024 by default. 
+- **Correlations.R** - correlation script. Runs the correlation step of ReCorDE. Takes CleanMonotherapyDrugResponse.RDS and NameStandardization.RDS as input. Outputs the unmerged, unpruned correlations results (UnprunedCorrelation.RDS) and the pruned correlation table (DCSCAD.RDS).
+- **Enrichment.R** - enrichment script. Runs the enrichment step of ReCorDE. Takes DCSCAD.RDS, ATC_map.RDS, and ATC_dictionary.RDS as input. 
 
 ### Other
-- **sessionInfo.txt** -- session information from analysis run for John et al. 2024.
+- **sessionInfo.txt** - session information from analysis run for John et al. 2024.
 
 ## Running ReCorDE
 ```r
