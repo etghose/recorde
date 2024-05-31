@@ -24,6 +24,6 @@ This repository contains code used to implement ReCorDe as shown in John et. al 
 
 ## Running ReCorDE
 ```r
-source("Correlations.R"")
+source("Correlations.R")
 source("Enrichment.R")
 ```
